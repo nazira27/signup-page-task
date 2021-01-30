@@ -1,7 +1,8 @@
 # Signup page
-Signup page
+## Project Setup
 
-`npm install` - install depencies
+
+`npm install` - install dependencies
 
 `npm run serve` - to run on local server
 
