@@ -28,7 +28,7 @@
             </div>
             <div style="display: flex">
                 <input v-model="checkbox" type="checkbox" id="vehicle1" name="vehicle1" value="Bike" class="check-box">
-                <p style="font-size: 14px; color: #756F86; margin: 3px 0">Принимаю <a>условия</a> использования</p><br>
+                <p style="font-size: 14px; color: #756F86; margin: 3px 0">Принимаю <a href="#">условия</a> использования</p><br>
             </div>
             <button :class="!checkbox ? 'btn' : 'btn-active'" :disabled="!checkbox">Зарегистрироваться</button>
         </div>
@@ -52,6 +52,7 @@ export default {
     watch: {
         email(value) {
             if (!this.reg.test(value) || !this.reg.test(this.email)) {
+                console.log(!this.reg.test(value), !this.reg.test(this.email))
                 this.msg = 'Введено не корректное значение';
             } else {
                 this.msg = '';
@@ -64,7 +65,7 @@ export default {
             this.phone = !x[2] ? x[1] : '(+' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
         },
         validateEmail() {
-            if (this.reg.test(this.email)) {
+            if (!this.reg.test(this.email)) {
                 this.msg = 'Введено не корректное значение';
             } else {
                 this.msg = '';
